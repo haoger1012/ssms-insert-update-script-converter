@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSMS Insert Update Script Converter</title>
+    <style>
+      textarea,button { display: block; margin-bottom: 3px; }
+      textarea { width: 640px; height: 480px; }
+    </style>
+</head>
+<body>
+  <button onclick="convert()">Convert</button>
+  <textarea id=raw></textarea>
+  <pre id=res>
+  </pre>
+  <script>
+    function convert() {
+      const result = raw.value.replace(/<([^,]+),[^>]+>/g, '@$1');
+      res.textContent = result;
+    }
+  </script>
+</body>
+</html>
